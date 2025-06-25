@@ -33,6 +33,7 @@ public class AuthenticationController {
     private UserDao userDao;
     private ProfileDao profileDao;
 
+    // PARAMETERIZED CONSTRUCTOR
     public AuthenticationController(TokenProvider tokenProvider, AuthenticationManagerBuilder authenticationManagerBuilder, UserDao userDao, ProfileDao profileDao) {
         this.tokenProvider = tokenProvider;
         this.authenticationManagerBuilder = authenticationManagerBuilder;
@@ -40,6 +41,7 @@ public class AuthenticationController {
         this.profileDao = profileDao;
     }
 
+    // LOGS IN A USER
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public ResponseEntity<LoginResponseDto> login(@Valid @RequestBody LoginDto loginDto) {
 
@@ -66,6 +68,7 @@ public class AuthenticationController {
         }
     }
 
+    // REGISTERS A USER
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public ResponseEntity<User> register(@Valid @RequestBody RegisterUserDto newUser) {
@@ -95,4 +98,3 @@ public class AuthenticationController {
     }
 
 }
-
