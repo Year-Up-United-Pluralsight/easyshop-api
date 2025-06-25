@@ -11,11 +11,10 @@ import org.yearup.models.Product;
 import java.util.List;
 
 // add the annotations to make this a REST controller
-// add the annotation to make this controller the endpoint for the following url
-    // http://localhost:8080/categories
-// add annotation to allow cross site origin requests
 @RestController
+// add the annotation to make this controller the endpoint for the following url : http://localhost:8080/categories
 @RequestMapping("/categories")
+// add annotation to allow cross site origin requests
 @CrossOrigin
 public class CategoriesController
 {
@@ -38,15 +37,14 @@ public class CategoriesController
     }
 
     // add the appropriate annotation for a get action
-    @GetMapping
+    @GetMapping("/{id}")
     public Category getById(@PathVariable int id)
     {
         // get the category by id
         return null;
     }
 
-    // the url to return all products in category 1 would look like this
-    // https://localhost:8080/categories/1/products
+    // the url to return all products in category 1 would look like this: https://localhost:8080/categories/1/products
     @GetMapping("{categoryId}/products")
     public List<Product> getProductsById(@PathVariable int categoryId)
     {
@@ -55,8 +53,8 @@ public class CategoriesController
     }
 
     // add annotation to call this method for a POST action
+    @PostMapping
     // add annotation to ensure that only an ADMIN can call this function
-    @PutMapping
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public Category addCategory(@RequestBody Category category)
     {
@@ -65,8 +63,8 @@ public class CategoriesController
     }
 
     // add annotation to call this method for a PUT (update) action - the url path must include the categoryId
+    @PutMapping("/{id}")
     // add annotation to ensure that only an ADMIN can call this function
-    @PutMapping("/{categoryId}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public void updateCategory(@PathVariable int id, @RequestBody Category category)
     {
@@ -75,8 +73,8 @@ public class CategoriesController
 
 
     // add annotation to call this method for a DELETE action - the url path must include the categoryId
-    // add annotation to ensure that only an ADMIN can call this function
     @DeleteMapping("/{id}")
+    // add annotation to ensure that only an ADMIN can call this function
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public void deleteCategory(@PathVariable int id)
     {
