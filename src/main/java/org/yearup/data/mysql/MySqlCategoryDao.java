@@ -35,7 +35,7 @@ public class MySqlCategoryDao extends MySqlDaoBase implements CategoryDao
 
             // 2. Creates preparedStatement for query
             PreparedStatement preparedStatement1 = connection.prepareStatement(
-                    "SELECT ProductID, ProductName, UnitPrice, UnitsInStock FROM Products"
+                    "SELECT * FROM categories"
             );
 
             // 3. Executes the query
@@ -66,6 +66,46 @@ public class MySqlCategoryDao extends MySqlDaoBase implements CategoryDao
     public Category getById(int categoryId)
     {
         // get category by id
+
+        // Uses dataSource to get connection
+        try (
+            // 1. Opens Connection to Database
+            Connection connection = getConnection();
+
+            // 2. Creates preparedStatement for query
+            PreparedStatement preparedStatement1 = connection.prepareStatement(
+                    "SELECT name " +
+                        "FROM categories " +
+                        "WHERE category_id = ?"
+            );
+
+        ){
+
+            // 3. Sets parameter onto the statement
+            preparedStatement1.setInt(1, categoryId);
+
+            try (
+                // 4. Executes query
+                ResultSet resultSet1 = preparedStatement1.executeQuery();
+            ){
+
+                // 5. Loops through the results
+                while (resultSet1.next()) {
+
+                    // Gets and stores info for each category
+                    String name = resultSet1.getString("name");
+                    String description = resultSet1.getString("description");
+
+                    // Constructs and returns category object
+                    return new Category(categoryId, name, description);
+                }
+            }
+        }
+
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+
         return null;
     }
 
