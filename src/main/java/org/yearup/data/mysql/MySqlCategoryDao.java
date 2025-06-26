@@ -41,16 +41,12 @@ public class MySqlCategoryDao extends MySqlDaoBase implements CategoryDao
             // 3. Executes the query
             ResultSet resultSet1 = preparedStatement1.executeQuery();
         ){
+
             // Loops through the results
             while (resultSet1.next()) {
 
-                // Gets and stores info for each category
-                int categoryId = resultSet1.getInt("category_id");
-                String name = resultSet1.getString("name");
-                String description = resultSet1.getString("description");
-
                 // Constructs category object; adds it list of categories
-                allCategories.add(new Category(categoryId, name, description));
+                allCategories.add(mapRow(resultSet1));
             }
         }
 
@@ -92,12 +88,9 @@ public class MySqlCategoryDao extends MySqlDaoBase implements CategoryDao
                 // 5. Loops through the results
                 while (resultSet1.next()) {
 
-                    // Gets and stores info for each category
-                    String name = resultSet1.getString("name");
-                    String description = resultSet1.getString("description");
-
                     // Constructs and returns category object
-                    return new Category(categoryId, name, description);
+                    return mapRow(resultSet1);
+
                 }
             }
         }
@@ -218,9 +211,9 @@ public class MySqlCategoryDao extends MySqlDaoBase implements CategoryDao
         catch (SQLException e) {
             e.printStackTrace();
         }
-
     }
 
+    // Takes a query's resultSet and returns its row as a Category object
     private Category mapRow(ResultSet row) throws SQLException
     {
         int categoryId = row.getInt("category_id");
