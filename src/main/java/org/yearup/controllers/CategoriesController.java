@@ -26,6 +26,7 @@ public class CategoriesController
     }
 
     @GetMapping // add the appropriate annotation for a get action
+    @PreAuthorize("permitAll()")
     public List<Category> getAll()
     {
         // find and return all categories
@@ -33,6 +34,7 @@ public class CategoriesController
     }
 
     @GetMapping("/{id}") // add the appropriate annotation for a get action
+    @PreAuthorize("permitAll()")
     public Category getById(@PathVariable int id)
     {
         // get the category by id
@@ -40,7 +42,8 @@ public class CategoriesController
     }
 
 
-    @GetMapping("/{categoryId}/products") // the url to return all products in category 1 would look like this: https://localhost:8080/categories/1/products
+    @GetMapping("/{categoryId}/products") // the url to return all products in category 1 would look like this: https://localhost:8080/categories/1/product
+    @PreAuthorize("permitAll()")
     public List<Product> getProductsById(@PathVariable int categoryId)
     {
         // get a list of product by categoryId

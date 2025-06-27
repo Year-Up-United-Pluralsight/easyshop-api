@@ -38,7 +38,7 @@ public class MySqlProductDao extends MySqlDaoBase implements ProductDao
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setInt(1, categoryId);
             statement.setInt(2, categoryId);
-            statement.setBigDecimal(3, minPrice);
+            statement.setBigDecimal(3, maxPrice);  // Changed this from minPrice to maxPrice
             statement.setBigDecimal(4, minPrice);
             statement.setString(5, color);
             statement.setString(6, color);
@@ -91,7 +91,7 @@ public class MySqlProductDao extends MySqlDaoBase implements ProductDao
 
     @Override
     public Product getById(int productId)
-    {
+        {
         String sql = "SELECT * FROM products WHERE product_id = ?";
         try (Connection connection = getConnection())
         {

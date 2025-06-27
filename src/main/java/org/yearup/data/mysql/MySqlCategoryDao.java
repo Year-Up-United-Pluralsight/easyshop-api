@@ -48,14 +48,16 @@ public class MySqlCategoryDao extends MySqlDaoBase implements CategoryDao
                 // Constructs category object; adds it list of categories
                 allCategories.add(mapRow(resultSet1));
             }
+
+            // Returns list of categories
+            return allCategories;
         }
 
         catch (SQLException e) {
             e.printStackTrace();
         }
 
-        // Returns list of categories
-        return allCategories;
+        return null;
     }
 
     @Override
