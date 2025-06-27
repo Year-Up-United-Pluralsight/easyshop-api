@@ -34,7 +34,7 @@ Version 1 of the application includes:
 
 ## 🛠 Tasks for Version 2
 
-### 🔧 Fix Existing Bugs
+### 🔧 Fixing Existing Bugs
 
 - **Bug #1**: Fixed search/filter endpoint returning incorrect results. Corrected the filtering mechanism.
 - **Bug #2**: Debugged editing an existing product (e.g., changing price or description) resulting in duplicate entries instead of updating the current record. Ensured updates replace the correct record.
@@ -50,9 +50,9 @@ Implemented a persistent shopping cart feature:
 
 ### 🧩 Categories Management (ADMIN Only)
 
-- Implement all methods in `CategoriesController`
-- Restrict category **insert**, **update**, and **delete** operations to users with the `ADMIN` role
-- Complete missing logic in `MySqlCategoriesDao`
+- Implementing all methods in `CategoriesController`
+- Restricting category **insert**, **update**, and **delete** operations to users with the `ADMIN` role
+- Completing missing logic in `MySqlCategoriesDao`
 
 ---
 
