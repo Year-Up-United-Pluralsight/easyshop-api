@@ -68,7 +68,25 @@ You are expected to:
 
 ## ⭐️ Interesting Code Snippet
 
+https://github.com/user-attachments/assets/4b8b2b9b-7ad1-4871-89b6-4eb728fa256d
 
+---
 
+## 🖼️ Screenshots
 
+https://github.com/user-attachments/assets/0a805a8b-69b4-40c2-9626-559bc55adbef
 
+https://github.com/user-attachments/assets/4ecc237e-3a4d-46b0-b9c6-9edf5c7eef27)
+
+---
+
+## 💡 Future Improvements
+
+Real-Time Chat Support:
+Should allow customers to get instant support while browsing, with agents able to see customer's cart and order history. Also to assist with technical issues
+
+Third-Party Shipping Integration:
+Connect with UPS, FedEx, USPS APIs to get real-time shipping rates and tracking. Automatically calculate shipping costs based on package weight/dimensions and generate shipping labels when orders are placed.
+
+Mobile App Development:
+Creating REST endpoints optimized for mobile apps with reduced data payloads. Examples: bulk cart operations, condensed product summaries, single dashboard endpoints that combine multiple data sources.
