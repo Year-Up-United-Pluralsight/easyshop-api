@@ -66,39 +66,9 @@ You are expected to:
 
 ---
 
-Project Structure
-src/
-├── main/
-│   ├── java/
-│   │   └── org/
-│   │       └── yearup/
-│   │           └── easyshop/
-│   │               ├── EasyShopApplication.java
-│   │               ├── controllers/
-│   │               │   ├── AuthenticationController.java
-│   │               │   ├── CategoriesController.java
-│   │               │   ├── ProductsController.java
-│   │               │   └── ShoppingCartController.java
-│   │               ├── models/
-│   │               │   ├── Category.java
-│   │               │   ├── Product.java
-│   │               │   ├── User.java
-│   │               │   └── ShoppingCartItem.java
-│   │               ├── data/
-│   │               │   ├── CategoryDao.java
-│   │               │   ├── ProductDao.java
-│   │               │   ├── UserDao.java
-│   │               │   └── ShoppingCartDao.java
-│   │               ├── data/mysql/
-│   │               │   └── MySQL implementations
-│   │               └── security/
-│   │                   └── JWT and authentication logic
-│   └── resources/
-│       ├── application.properties
-│       └── static/
-└── test/
-    └── java/
-        └── org/
-            └── yearup/
-                └── easyshop/
-                    └── [test classes]
+## ⭐️ Interesting Code Snippet
+
+
+
+
+
