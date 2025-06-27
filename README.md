@@ -6,38 +6,35 @@ Welcome to the backend development portion of **EasyShop**, an e-commerce platfo
 
 ## 📌 Project Overview
 
-This project is part of a capstone experience where you take on the role of a **backend developer**. The frontend and backend codebases are already functional in Version 1. Your responsibilities begin with improving the backend logic and enhancing the application with new capabilities.
+EasyShop is an e-commerce web application that allows customers to browse products, manage their shopping cart, and complete purchases. This repository contains the backend API (Version 2) built with Spring Boot, which serves data to the frontend web application.
+
+Role: Backend Developer
+Version: 2.0 (Enhancement of existing Version 1)
+Architecture: REST API with MySQL database integration
 
 ---
 
-## 💻 Technologies Used
-
-- **Java 17**
-- **Spring Boot**
-- **MySQL**
-- **Postman** (for API testing)
-- **JUnit** (for unit testing)
-- **GitHub Projects** (for issue and task tracking)
-
----
-
-## ✅ Version 1 Features
-
-Version 1 of the application includes:
+## ✅ Core E-Commerce Functionality
 
 - User registration and login
 - Product browsing by category
 - Search and filter functionality (with known bugs)
 - Functional front-end website for interacting with the API
+- Product catalog management
+- Category-based product organization
+- Shopping cart functionality
+- User authentication and authorization
+- Order processing and management
+- User profile management
 
 ---
-
-## 🛠 Tasks for Version 2
 
 ### 🔧 Fixing Existing Bugs
 
 - **Bug #1**: Fixed search/filter endpoint returning incorrect results. Corrected the filtering mechanism.
 - **Bug #2**: Debugged editing an existing product (e.g., changing price or description) resulting in duplicate entries instead of updating the current record. Ensured updates replace the correct record.
+
+---
 
 ### 🚀 New Feature: Shopping Cart
 
@@ -47,6 +44,8 @@ Implemented a persistent shopping cart feature:
 - Items added to the cart are saved in the database and associated with the user
 - Cart contents persist between sessions (e.g., logout → login)
 - Utilize the existing `shopping_cart` table in the database
+
+---
 
 ### 🧩 Categories Management (ADMIN Only)
 
@@ -90,3 +89,18 @@ Connect with UPS, FedEx, USPS APIs to get real-time shipping rates and tracking.
 
 Mobile App Development:
 Creating REST endpoints optimized for mobile apps with reduced data payloads. Examples: bulk cart operations, condensed product summaries, single dashboard endpoints that combine multiple data sources.
+
+--
+
+
+## 💻 Technologies Used
+
+- **Spring Boot 2.7+** - Main application framework
+- **Spring Security** - Authentication and authorization
+- **Spring Data JPA** - Data persistence layer
+- **MySQL 8.0** - Primary database
+- **JWT** - Token-based authentication
+- **Maven** - Build and dependency management
+- **JUnit 5** - Unit testing framework
+- **Postman** - API testing and documentation
+- **Git & GitHub** - Version control and project management
